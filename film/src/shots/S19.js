@@ -12,8 +12,18 @@ module.exports = {
     const light = { ambient: '#4a4f88', ambientAmt: 0.45, rim: '#ffcf80', rimDir: [0, -3], rimAlpha: 0.85 };
     const rz = L.lerp(24.6, 34.5, C.ease.inOut(dt / 9)); const sz = L.lerp(27, 40, C.ease.in(Math.min(1, dt / 7)));
     // cats on the fences: grey on the left, black on the right, bobtail on the left further up
-    const cats = [['boss', -1.7, 27.2, 0.95], ['kuro', 1.7, 29.6, 0.95], ['bobtail', -1.72, 32.2, 0.95]];
+    const cats = [['boss', -1.78, 27.2, 0.46], ['kuro', 1.78, 29.6, 0.46], ['bobtail', -1.8, 32.2, 0.46]];
     const list = [];
+    // folding benches (battari shogi) against the house fronts for the cats to sit on
+    const Kit = require('../sets/kit');
+    for (const [c, x, z, y] of cats) { const sd = Math.sign(x), xi = sd * 1.42, xo = sd * 2.12, z0 = z - 0.62, z1 = z + 0.62, h = y, th = 0.06;
+      list.push({ depth: z + 0.02, draw: () => { ctx.save(); v.apply(ctx); const ln = { line: '#1a1622', lw: 1.3 };
+        for (const [lx, lz] of [[xi + sd * 0.06, z0 + 0.06], [xi + sd * 0.06, z1 - 0.06]]) Kit.quad(ctx, cam, [[lx, 0, lz], [lx + sd * 0.05, 0, lz], [lx + sd * 0.05, h, lz], [lx, h, lz]], '#2a2230', ln);
+        Kit.quad(ctx, cam, [[xo, h - th, z0], [xi, h - th, z0], [xi, h, z0], [xo, h, z0]], '#3b3040', ln);
+        Kit.quad(ctx, cam, [[xi, h - th, z0], [xi, h - th, z1], [xi, h, z1], [xi, h, z0]], '#4a3c4c', ln);
+        Kit.quad(ctx, cam, [[xo, h, z0], [xi, h, z0], [xi, h, z1], [xo, h, z1]], '#6e5d6c', ln);
+        for (const k of [0.25, 0.5, 0.75]) Kit.seg3(ctx, cam, [xi + (xo - xi) * k, h, z0], [xi + (xo - xi) * k, h, z1], '#3a2f3e', 0.9, { seed: 3 + k * 10 });
+        Kit.seg3(ctx, cam, [xi, h, z0], [xi, h, z1], '#ffcf80', 1.4, { alpha: 0.5, seed: 8 }); ctx.restore(); } }); }
     for (const [c, x, z, y] of cats) { const p = L.at(cam, x, z, y); if (!p) continue; const passed = L.clamp((rz - z + 1.5) / 2.5, 0, 1); const q = v.pt([p.x, p.y]);
       list.push({ depth: z, draw: () => L.drawChar(ctx, W, H, (cx, st) => K.draw(cx, { cat: c, pose: 'sit', headYaw: L.lerp(1.2, 0.15, C.ease.inOut(passed)), headTilt: 0.1 * passed, pupil: 0.95, lookX: 0.4 * passed, t: dt + z, tailAmp: 0.7, blink: L.blink(dt, [z % 3 + 1]) }, st), { x: q[0], y: q[1], scale: p.scale * zoom, flip: x > 0 ? true : false }, { light: { ambient: '#4a4f88', ambientAmt: 0.4, rim: '#ffcf80', rimDir: [x > 0 ? -2 : 2, -2], rimAlpha: 0.7 }, contact: { rx: 60, ry: 8, alpha: 0.3 } }) }); }
     // shiba bounding ahead toward the gate
