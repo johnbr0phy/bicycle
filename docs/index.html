@@ -62,6 +62,9 @@ figcaption .k { font-family: "Shippori Mincho", serif; color: var(--seal); margi
 .sheet img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #ebe2d0; display: block; }
 .sheet span { display: block; padding: 10px 14px 12px; font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
 .sheet b { display: block; color: var(--ink); font-size: 16px; }
+.seed { margin: 0 0 34px; padding: 22px 26px; border-left: 4px solid var(--seal); background: var(--card); border-radius: 0 6px 6px 0; box-shadow: 0 0 0 1px var(--rule); font-size: 19px; line-height: 1.75; max-width: 820px; }
+h3.sub { font-family: "Shippori Mincho", serif; font-size: 20px; margin: 0 0 6px; }
+h3.sub span { font-family: "Klee One", sans-serif; font-weight: 400; font-size: 15px; color: var(--ink-soft); margin-left: 10px; }
 .prompt { background: var(--card); border-radius: 6px; box-shadow: 0 0 0 1px var(--rule); padding: 8px 28px 18px; position: relative; }
 .prompt::before { content: "依頼"; position: absolute; top: 18px; right: 20px; writing-mode: vertical-rl; font-family: "Shippori Mincho", serif; color: var(--seal); opacity: .6; font-size: 18px; letter-spacing: .3em; }
 .prompt p { margin: 16px 0; max-width: 760px; }
@@ -83,6 +86,7 @@ footer .ded { font-family: "Shippori Mincho", serif; font-size: 18px; color: var
   .stills { grid-template-columns: 1fr 1fr; gap: 10px; }
   .prompt { padding: 4px 18px 14px; }
   .prompt::before { display: none; }
+  .seed { padding: 16px 18px; font-size: 17px; }
   .meta { flex-direction: column; }
   .meta .dl a { margin: 0 14px 0 0; }
 }
@@ -126,8 +130,11 @@ footer .ded { font-family: "Shippori Mincho", serif; font-size: 18px; color: var
   </section>
 
   <section>
-    <h2>The original prompt <span class="jp">依頼</span></h2>
-    <p class="lede">This is the brief exactly as given, with private paths and amounts left as placeholders. The fal and ElevenLabs services it mentions weren't reachable from the build environment. So every frame was drawn in code, every note was scored in code, and no generated footage was used.</p>
+    <h2>The prompt <span class="jp">依頼</span></h2>
+    <p class="lede">This is the only prompt a person wrote. It went to Claude, word for word:</p>
+    <blockquote class="seed">I just found this really long prompt on x and it produced a really fun video. Can we create a prompt that is equally as ridiculously long and detailed about creating a touching video about a robot that has to try and find his owners lost bicycle somewhere in the back streets of kyoto. Make sure there are dogs and cats and that the video is Japanese style cartoony graphics. The dude said Claude ran for 12 hours. Write the prompt for me</blockquote>
+    <h3 class="sub">The brief Claude wrote from it <span>2,179 words</span></h3>
+    <p class="lede">Nobody wrote this brief by hand, and nobody read it before it went straight to Claude Code, which made the film. Private paths and amounts stay as placeholders. The brief asks for fal and ElevenLabs, but neither could be reached from the build environment. So every frame was drawn in code, every note was scored in code, and no generated footage was used.</p>
     <div class="prompt clamped" id="prompt">
 <p>I want you to independently do an end-to-end complete pass on making a short animated film. It&#x27;s called &quot;The Bicycle.&quot; It&#x27;s a touching story about a small household robot who has to find his owner&#x27;s lost bicycle somewhere in the back streets of Kyoto. There is no script yet. There is no audio yet. There is no storyboard yet. You are going to make all of it, start to finish, and I&#x27;m not going to be here to answer questions, so make reasonable assumptions, write them down in a DECISIONS.md as you go, and keep moving.</p>
 <p>The story at the highest level: the owner is an old woman, maybe seventy, who lives alone in a narrow machiya somewhere off a quiet lane in Higashiyama. Her bicycle is old, a step-through mamachari with a rusted basket and a bell that doesn&#x27;t work properly. It has sentimental weight that you should decide on and reveal slowly, not explain up front. Maybe it was her late husband&#x27;s, maybe it was the bike she rode to her first job, maybe she taught her daughter to ride on the same street. Pick one and commit. The robot is her helper. He is small, waist-high, a bit dented, a little slow, clearly not a fancy model, and he loves her in whatever way a robot loves. One morning the bicycle is gone from the front of the house. She doesn&#x27;t say much about it. She just looks at the empty spot and goes back inside. The robot decides, on his own, without being asked, to go and find it. The whole film is his search through Kyoto over one day, from early morning to lanterns coming on at night, and the ending should land emotionally. I don&#x27;t want it saccharine and I don&#x27;t want it cynical. I want it to feel like the ending of a good short you&#x27;d see at a festival where the room goes quiet for a second before people clap.</p>
@@ -145,7 +152,7 @@ footer .ded { font-family: "Shippori Mincho", serif; font-size: 18px; color: var
 <p>Deliverables: the final MP4 at 1080p with embedded audio, a square or vertical crop for X if it&#x27;s not too painful, the style sheet and character sheets as PNGs, the shot list, the DECISIONS.md, and a short WRITEUP.md explaining what you made and why, in your own voice.</p>
 <p>Make no mistakes.</p>
     </div>
-    <button class="more" id="more" type="button" aria-expanded="false" aria-controls="prompt">Read the whole prompt</button>
+    <button class="more" id="more" type="button" aria-expanded="false" aria-controls="prompt">Read the whole brief</button>
   </section>
 
   <section>
@@ -199,7 +206,7 @@ footer .ded { font-family: "Shippori Mincho", serif; font-size: 18px; color: var
   var p = document.getElementById('prompt'), b = document.getElementById('more');
   b.addEventListener('click', function () {
     var open = p.classList.toggle('clamped') === false;
-    b.textContent = open ? 'Collapse' : 'Read the whole prompt'; b.setAttribute('aria-expanded', open);
+    b.textContent = open ? 'Collapse' : 'Read the whole brief'; b.setAttribute('aria-expanded', open);
     if (!open) p.scrollIntoView({ block: 'start' });
   });
 })();
