@@ -1,0 +1,10 @@
+const C = require('../src/engine/core'); const FX = require('../src/engine/fx'); const Lane = require('../src/sets/lane');
+const tod = process.argv[2] || 'dawn'; const t0 = Date.now();
+const set = Lane.build({ tod, raw: process.argv[3] === 'raw' });
+const W = 1920, H = 1080; const cv = C.createCanvas(W, H), ctx = cv.getContext('2d');
+ctx.drawImage(set.plate, 0, 0); if (set.fg) ctx.drawImage(set.fg, 0, 0);
+C.post(ctx, W, H, { paper: 0.22, vignette: 0.15 });
+const G = { dawn: { contrast: 0.22, sat: 1.35, shadow: '#40387a', shadowAmt: 0.2, high: '#ffd9a8', highAmt: 0.18 }, night: { contrast: 0.2, sat: 1.2, shadow: '#141a3a', shadowAmt: 0.25, high: '#ffd08a', highAmt: 0.15 }, day: { contrast: 0.15, sat: 1.1, shadow: '#4a4060', shadowAmt: 0.1, high: '#fff0d0', highAmt: 0.1 } }[tod];
+FX.grade(ctx, W, H, G); FX.glow(ctx, W, H, { threshold: 0.7, radius: 30, strength: 0.4 });
+require('fs').writeFileSync(`out/tests/lane_${tod}${process.argv[3] ? '_' + process.argv[3] : ''}.png`, cv.toBuffer('image/png'));
+console.log('ms', Date.now() - t0);
