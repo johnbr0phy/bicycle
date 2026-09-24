@@ -9,12 +9,12 @@ module.exports = {
   frame(ctx, t, s, env) {
     const { W, H } = env; const dt = env.dt; const cam = s.cam; ctx.drawImage(s.plate, 0, 0);
     // robot
-    const rr = L.seg(dt, 0, 2.7, L.ease.out); const rx = L.lerp(2.5, 0.75, rr), rz = L.lerp(2.2, 4.9, rr); const rp = L.at(cam, rx, rz);
+    const rr = L.seg(dt, 0, 2.7, L.ease.out); const rx = L.lerp(2.3, 0.45, rr), rz = L.lerp(2.2, 4.9, rr); const rp = L.at(cam, rx, rz);
     const turned = L.seg(dt, 2.9, 3.4); const ryaw = L.lerp(L.faceYaw(cam, -1.6, 3.2), L.cheat(L.faceYaw(cam, 1, 0.1), 0.85), turned);
     const startle = L.seg(dt, 3.7, 3.9) * (1 - L.seg(dt, 5.5, 6.2));
     const rpose = { yaw: ryaw, t: dt, wheel: -rz * 6, battery: 3, bob: rr < 1 ? 1.4 * Math.abs(Math.sin(dt * 13)) : 0, lean: -0.06 * startle, antenna: rr < 1 ? -0.15 : 0.35 * startle, headYaw: 0.1 * turned, screen: { mode: startle > 0.5 ? 'wide' : 'eyes', blink: L.blink(dt, [1.3, 6.4]) } };
     // shiba trots in from the right, freezes
-    const sr = L.seg(dt, 1.6, 3.3, L.ease.out); const back = L.seg(dt, 5.0, 5.5); const sx = L.lerp(3.4, 2.05, sr) + 0.2 * back, sz = L.lerp(3.8, 4.6, sr) + 0.05 * back; const sp = L.at(cam, sx, sz);
+    const sr = L.seg(dt, 1.6, 3.3, L.ease.out); const back = L.seg(dt, 5.0, 5.5); const sx = L.lerp(3.1, 1.55, sr) + 0.2 * back, sz = L.lerp(3.8, 4.6, sr) + 0.05 * back; const sp = L.at(cam, sx, sz);
     const frozen = dt > 3.3; const growl = dt > 3.8 && dt < 6.4;
     const spose = frozen ? { crouch: 0.35 + 0.1 * growl, eyes: 'narrow', ears: 'back', mouth: growl ? 'growl' : 'closed', tail: 1.15, headYaw: 0.5, t: dt, legsOverride: back > 0 && back < 1 ? { FL: [70, 0], FR: [78, -6 * Math.sin(back * Math.PI)], BL: [-60, 0], BR: [-52, 0] } : null, shake: growl ? 0.08 : 0 }
       : { gait: 'trot', phase: dt * 2.4, stride: 0.8, mouth: 'pant', tail: 1, t: dt, headYaw: 0.3 };
