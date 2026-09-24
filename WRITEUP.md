@@ -30,12 +30,14 @@ The brief assumed a fal.ai key for image and video generation and an ElevenLabs 
 - The animation is rig-driven, not hand-keyed drawing by drawing. Walks are cycles, and a few poses are stiffer than a person would draw them.
 - The crowds in Nishiki are simple figures.
 - The vertical cut is a pan-and-scan crop, not a re-staging.
+- The field recordings from ESC-50 are CC BY-NC, so this cut is for non-commercial sharing. Swapping them for CC0 recordings would clear it for commercial use.
 - The reference post on X could not be fetched from this environment, so I held myself to a festival bar instead.
 
 ## Files
 
 - `deliverables/the_bicycle_1080p.mp4`: the film, 1920×1080, 24 fps, stereo AAC
-- `deliverables/the_bicycle_vertical_4x5.mp4`: the 1080×1350 cut for X
+- `deliverables/the_bicycle_vertical_4x5.mp4`: the 1080×1350 cut for X (pan-and-scan per shot; the credits are letterboxed so no line is cut)
+- `deliverables/the_bicycle_preview_720p.mp4`: a small 720p copy for phones and chat
 - `sheets/`: the style sheet and the character sheets (robot, woman, boy, shiba, cats, bicycle)
 - `docs/STORY.md`, `docs/SHOTLIST.md`: the beat sheet and the 28-shot list
 - `DECISIONS.md`: every assumption, in order; `docs/PRODUCTION_LOG.md`: what broke and how it was fixed
