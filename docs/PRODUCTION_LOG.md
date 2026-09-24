@@ -21,6 +21,13 @@ Kept as I went, so later passes don't repeat mistakes.
 | Shop counters in the lane looked like cartoon props | Too literal | Replaced with lattice |
 | Market shopper walked through the lens | Crowd included near-camera oncoming walkers | Oncoming shoppers kept to the sides; near figures culled |
 | Renders killed by the OOM killer | node-canvas 3.2.3 leaks every canvas that receives `drawImage` | Frame-scoped canvas registry, shrunk to 1x1 at frame end |
+| S19 cats floating mid-air | Placed at fence height with no fence drawn | Folding benches (battari shogi) under them |
+| S21 shiba looked headless | Drawn before the robot and facing away from the boy | Flipped to face the boy, drawn in depth order; hat raised clear |
+| S10 shiba cut by frame edge | Blocking pushed too far right | Robot and shiba marks moved 0.3-0.5 m in |
+| S14 bottom 40% empty sand | Wide lens, nothing in the foreground | Watercolour grass bank with tufts and swaying susuki |
+| S22 shiba's head out of frame | Led the group off the left edge | Trails the robot instead |
+| Vertical cut lost the robot or the bell (S07, S08, S10, S26) and clipped credit lines | Crop centres set by eye | Re-solved from contact sheets; credits letterboxed on paper colour |
+| 208 MB master too big for GitHub and chat | crf 16 | Two-pass targets: 3 Mbps master (<100 MB), 820 kbps 720p preview (<30 MB) |
 
 ## Sound
 
