@@ -1,0 +1,12 @@
+const C = require('../src/engine/core'); const FX = require('../src/engine/fx'); const Lane = require('../src/sets/lane'); const R = require('../src/chars/robot'); const CP = require('../src/engine/comp');
+const set = Lane.build({ tod: 'dawn' }); const cam = set.cam; const W = 1920, H = 1080;
+const cv = C.createCanvas(W, H), ctx = cv.getContext('2d'); ctx.drawImage(set.plate, 0, 0);
+const pos = [1.1, 0, 4.9]; const g = cam.p(...pos); const k = cam.scaleAt(...pos); const scale = k * 0.85 / 300;
+const L = CP.charLayer(W, H, (c, st) => R.draw(c, { yaw: 1.9, headYaw: 0.5, screen: { mode: 'eyes', lookX: 0.5, lookY: 0.4 }, headNod: 4 }, st), { x: g[0], y: g[1], scale }, { light: [0.1, -1] });
+CP.castShadow(ctx, L, g[1], [0.25, 1], 0.9, '#3a3060', 0.35, 4);
+CP.contactShadow(ctx, g[0], g[1], 150 * scale * 1.2, 22 * scale * 1.2, '#2a2240', 0.5);
+CP.placeLayer(ctx, L, { ambient: '#b8b0e0', ambientAmt: 0.35, rim: '#ffe2b0', rimDir: [0, -3], rimAlpha: 0.9 });
+if (set.fg) ctx.drawImage(set.fg, 0, 0);
+C.post(ctx, W, H, { paper: 0.22, vignette: 0.15 });
+FX.grade(ctx, W, H, { contrast: 0.22, sat: 1.35, shadow: '#40387a', shadowAmt: 0.2, high: '#ffd9a8', highAmt: 0.18 }); FX.glow(ctx, W, H, { threshold: 0.7, radius: 30, strength: 0.4 });
+require('fs').writeFileSync('out/tests/comp_robot_lane.png', cv.toBuffer('image/png'));

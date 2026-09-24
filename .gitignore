@@ -1,3 +1,7 @@
 film/node_modules/
 film/fonts/*.ttf
 film/out/
+film/audio/lib/
+film/audio/demo/
+film/audio/cache/
+film/audio/__pycache__/
