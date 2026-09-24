@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Bicycle 自転車</title>
+<meta name="description" content="A 3 minute 42 second wordless animated short about a small robot searching Kyoto for an old woman's bicycle. Written, drawn, animated and scored by Claude.">
+<meta property="og:title" content="The Bicycle 自転車">
+<meta property="og:description" content="A small robot searches Kyoto for an old woman's bicycle. A wordless animated short, made end to end by Claude.">
+<meta property="og:image" content="https://johnbr0phy.github.io/bicycle/assets/poster.jpg">
+<meta property="og:type" content="video.other">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #efe6d6; --paper-2: #e6dbc7; --ink: #2a2430; --ink-soft: #5d5462; --rule: #cbbda5;
+  --seal: #b8392b; --accent: #3f5f8f; --card: #f6f0e4; --shadow: rgba(60,40,20,.12);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #17162a; --paper-2: #1f1d35; --ink: #eee4d2; --ink-soft: #b3a99c; --rule: #3a3656;
+    --seal: #d9543f; --accent: #9fb8e8; --card: #221f3a; --shadow: rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #17162a; --paper-2: #1f1d35; --ink: #eee4d2; --ink-soft: #b3a99c; --rule: #3a3656;
+  --seal: #d9543f; --accent: #9fb8e8; --card: #221f3a; --shadow: rgba(0,0,0,.35);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Klee One", "Hiragino Maru Gothic ProN", system-ui, sans-serif; line-height: 1.7; font-size: 17px; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .5; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .3 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before { mix-blend-mode: screen; opacity: .25; } }
+:root[data-theme="dark"] body::before { mix-blend-mode: screen; opacity: .25; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+header.hero { text-align: center; padding: 56px 0 28px; }
+.title { font-family: "Shippori Mincho", serif; font-weight: 700; font-size: clamp(56px, 11vw, 112px); letter-spacing: .08em; line-height: 1.1; margin: 0; display: inline-flex; align-items: flex-start; gap: .12em; }
+.seal { display: inline-grid; place-items: center; font-size: .2em; width: 1.6em; height: 1.6em; line-height: 1; background: var(--seal); color: #fff4ea; border-radius: 3px; margin-top: 1.2em; letter-spacing: 0; }
+.en { font-family: "Shippori Mincho", serif; letter-spacing: .5em; font-size: clamp(13px, 2.2vw, 17px); color: var(--ink-soft); margin: 10px 0 0 .5em; }
+.logline { max-width: 640px; margin: 22px auto 0; color: var(--ink-soft); }
+.player { position: relative; border-radius: 6px; overflow: hidden; box-shadow: 0 18px 50px var(--shadow), 0 0 0 1px var(--rule); background: #000; aspect-ratio: 16 / 9; }
+.player video { width: 100%; height: 100%; display: block; }
+.meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; margin: 14px 2px 0; color: var(--ink-soft); font-size: 15px; }
+.meta .dl a { margin-left: 14px; white-space: nowrap; }
+.meta .dl a:first-child { margin-left: 0; }
+section { padding: 56px 0 8px; }
+h2 { font-family: "Shippori Mincho", serif; font-weight: 700; font-size: 26px; margin: 0 0 6px; display: flex; align-items: baseline; gap: 14px; }
+h2 .jp { color: var(--seal); font-size: 20px; }
+.lede { color: var(--ink-soft); margin: 0 0 22px; max-width: 720px; }
+.stills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+figure { margin: 0; }
+figure img { width: 100%; height: auto; display: block; border-radius: 4px; box-shadow: 0 0 0 1px var(--rule); }
+figcaption { font-size: 14px; color: var(--ink-soft); margin-top: 6px; line-height: 1.5; }
+figcaption .k { font-family: "Shippori Mincho", serif; color: var(--seal); margin-right: 8px; }
+.sheets { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.sheet { display: block; text-decoration: none; color: inherit; background: var(--card); border-radius: 6px; overflow: hidden; box-shadow: 0 0 0 1px var(--rule); transition: transform .2s, box-shadow .2s; }
+.sheet:hover { transform: translateY(-2px); box-shadow: 0 10px 26px var(--shadow), 0 0 0 1px var(--rule); }
+.sheet img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #ebe2d0; display: block; }
+.sheet span { display: block; padding: 10px 14px 12px; font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+.sheet b { display: block; color: var(--ink); font-size: 16px; }
+.prompt { background: var(--card); border-radius: 6px; box-shadow: 0 0 0 1px var(--rule); padding: 8px 28px 18px; position: relative; }
+.prompt::before { content: "依頼"; position: absolute; top: 18px; right: 20px; writing-mode: vertical-rl; font-family: "Shippori Mincho", serif; color: var(--seal); opacity: .6; font-size: 18px; letter-spacing: .3em; }
+.prompt p { margin: 16px 0; max-width: 760px; }
+.prompt.clamped { max-height: 520px; overflow: hidden; -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
+.more { margin: 12px 0 0; font: inherit; background: none; border: 1px solid var(--rule); color: var(--ink); padding: 6px 16px; border-radius: 999px; cursor: pointer; }
+.more:hover { border-color: var(--ink-soft); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px 28px; }
+.facts div { border-top: 1px solid var(--rule); padding-top: 10px; }
+.facts b { display: block; font-family: "Shippori Mincho", serif; font-size: 17px; }
+.facts span { color: var(--ink-soft); font-size: 15px; }
+.docs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.docs a { border: 1px solid var(--rule); border-radius: 999px; padding: 6px 16px; text-decoration: none; color: var(--ink); font-size: 15px; }
+.docs a:hover { border-color: var(--ink-soft); }
+footer { text-align: center; padding: 64px 0 48px; color: var(--ink-soft); font-size: 15px; }
+footer .ded { font-family: "Shippori Mincho", serif; font-size: 18px; color: var(--ink); margin-bottom: 10px; }
+.theme { position: absolute; top: 14px; right: 16px; background: none; border: 1px solid var(--rule); color: var(--ink-soft); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .stills { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .prompt { padding: 4px 18px 14px; }
+  .prompt::before { display: none; }
+  .meta { flex-direction: column; }
+  .meta .dl a { margin: 0 14px 0 0; }
+}
+@media (max-width: 420px) { .stills { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Toggle colour theme">夜 / 昼</button>
+<header class="hero wrap">
+  <h1 class="title">自転車<span class="seal">自</span></h1>
+  <p class="en">THE BICYCLE</p>
+  <p class="logline">One morning an old woman's bicycle is gone from outside her house in Higashiyama. She says nothing. Her small, dented helper robot decides, on his own, to go and find it.</p>
+</header>
+
+<main class="wrap">
+  <div class="player">
+    <video controls playsinline preload="metadata" poster="assets/poster.jpg">
+      <source src="film/the_bicycle_1080p.mp4" type="video/mp4">
+      Your browser can't play this video. <a href="film/the_bicycle_1080p.mp4">Download it instead.</a>
+    </video>
+  </div>
+  <div class="meta">
+    <span>3 min 42 s · no dialogue · sound on</span>
+    <span class="dl"><a href="film/the_bicycle_1080p.mp4" download>1080p MP4 (89 MB)</a><a href="film/the_bicycle_vertical_4x5.mp4" download>4:5 vertical (72 MB)</a></span>
+  </div>
+
+  <section>
+    <h2>Frames <span class="jp">場面</span></h2>
+    <p class="lede">Dawn to lantern-light in one day, shot mostly from about a metre off the ground, where a small robot sees the world and the cats are his peers.</p>
+    <div class="stills">
+<figure><img src="assets/stills/still_1.jpg" alt="A stranger stares into the lens. The first five seconds." loading="lazy" width="960" height="540"><figcaption><span class="k">朝</span>A stranger stares into the lens. The first five seconds.</figcaption></figure>
+<figure><img src="assets/stills/still_2.jpg" alt="The empty spot where the bicycle stood for thirty years." loading="lazy" width="960" height="540"><figcaption><span class="k">朝</span>The empty spot where the bicycle stood for thirty years.</figcaption></figure>
+<figure><img src="assets/stills/still_3.jpg" alt="The wall of cats. Five informants, none of them helpful." loading="lazy" width="960" height="540"><figcaption><span class="k">朝</span>The wall of cats. Five informants, none of them helpful.</figcaption></figure>
+<figure><img src="assets/stills/still_4.jpg" alt="Nishiki market. The only clue is a child&#x27;s yellow school hat." loading="lazy" width="960" height="540"><figcaption><span class="k">昼</span>Nishiki market. The only clue is a child&#x27;s yellow school hat.</figcaption></figure>
+<figure><img src="assets/stills/still_5.jpg" alt="Pontocho as the lanterns come on and the rain starts." loading="lazy" width="960" height="540"><figcaption><span class="k">夕</span>Pontocho as the lanterns come on and the rain starts.</figcaption></figure>
+<figure><img src="assets/stills/still_6.jpg" alt="One bar of battery. The shiba comes back with the bell." loading="lazy" width="960" height="540"><figcaption><span class="k">夜</span>One bar of battery. The shiba comes back with the bell.</figcaption></figure>
+<figure><img src="assets/stills/still_7.jpg" alt="She runs behind him, holding the saddle, and lets go." loading="lazy" width="960" height="540"><figcaption><span class="k">夜</span>She runs behind him, holding the saddle, and lets go.</figcaption></figure>
+<figure><img src="assets/stills/still_8.jpg" alt="The bell that has not worked in years rings." loading="lazy" width="960" height="540"><figcaption><span class="k">夜</span>The bell that has not worked in years rings.</figcaption></figure>
+<figure><img src="assets/stills/still_9.jpg" alt="In the morning the spot is not empty." loading="lazy" width="960" height="540"><figcaption><span class="k">朝</span>In the morning the spot is not empty.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>The original prompt <span class="jp">依頼</span></h2>
+    <p class="lede">This is the brief exactly as given, with private paths and amounts left as placeholders. The fal and ElevenLabs services it mentions weren't reachable from the build environment. So every frame was drawn in code, every note was scored in code, and no generated footage was used.</p>
+    <div class="prompt clamped" id="prompt">
+<p>I want you to independently do an end-to-end complete pass on making a short animated film. It&#x27;s called &quot;The Bicycle.&quot; It&#x27;s a touching story about a small household robot who has to find his owner&#x27;s lost bicycle somewhere in the back streets of Kyoto. There is no script yet. There is no audio yet. There is no storyboard yet. You are going to make all of it, start to finish, and I&#x27;m not going to be here to answer questions, so make reasonable assumptions, write them down in a DECISIONS.md as you go, and keep moving.</p>
+<p>The story at the highest level: the owner is an old woman, maybe seventy, who lives alone in a narrow machiya somewhere off a quiet lane in Higashiyama. Her bicycle is old, a step-through mamachari with a rusted basket and a bell that doesn&#x27;t work properly. It has sentimental weight that you should decide on and reveal slowly, not explain up front. Maybe it was her late husband&#x27;s, maybe it was the bike she rode to her first job, maybe she taught her daughter to ride on the same street. Pick one and commit. The robot is her helper. He is small, waist-high, a bit dented, a little slow, clearly not a fancy model, and he loves her in whatever way a robot loves. One morning the bicycle is gone from the front of the house. She doesn&#x27;t say much about it. She just looks at the empty spot and goes back inside. The robot decides, on his own, without being asked, to go and find it. The whole film is his search through Kyoto over one day, from early morning to lanterns coming on at night, and the ending should land emotionally. I don&#x27;t want it saccharine and I don&#x27;t want it cynical. I want it to feel like the ending of a good short you&#x27;d see at a festival where the room goes quiet for a second before people clap.</p>
+<p>There must be dogs and cats. Not as background decoration, as actual characters with actual roles in the story. I want a shiba inu who is suspicious of the robot at first and then becomes his guide, maybe because the dog saw who took the bicycle, maybe because the dog just likes chasing things. I want a whole gang of Kyoto street cats, the kind that sit on temple walls and under vending machines, and I want them to be the robot&#x27;s informants, an unhelpful unreliable network of cats who each know a tiny piece of the answer. Think about how cats and dogs move differently and make sure the animation respects that. A cat is liquid. A shiba is a spring. The robot is neither and that contrast is a big part of the charm. Also the robot should not be able to talk to the animals in words. Figure out how they communicate anyway. That&#x27;s the fun part.</p>
+<p>Visually, I want Japanese-style cartoony graphics. Not photoreal, not 3D Pixar, I think Pixar is kind of slop for this. I mean hand-drawn feeling, flat cel shading, thick clean linework, watercolor-ish backgrounds, the sort of thing you&#x27;d see in a Japanese children&#x27;s picture book or a gentle TV anime from the 90s or 2000s. You know the lineage here. Don&#x27;t clone any one studio and definitely don&#x27;t try to reproduce a specific existing character or film, come up with a coherent style of your own that sits in that tradition and that works well with the image gen models available to you. Warm and soft but with real draftsmanship in the backgrounds. Kyoto backstreets are made of texture: wooden lattice, noren curtains, potted plants crammed onto doorsteps, moss on stone, tangled power lines, vending machines glowing at dusk, the Kamo river with people sitting evenly spaced along the bank, the lanterns in Pontocho, the torii tunnel at Fushimi Inari if you want a big set piece, the Philosopher&#x27;s Path, Nishiki market, the little canals in Gion. Pull real references from the internet freely. Study photographs of these places at different times of day. Study how Japanese animators draw Kyoto specifically, the way they simplify the architecture without losing the feeling of it.</p>
+<p>Think about your current capabilities and what&#x27;s realistic. You have the fal API key in [path] and there&#x27;s documentation for the image and video models in my markdown files in [folder]. You should read all of it before you generate a single frame. Use the image models to generate a proper style sheet first, and I mean a real one: a page of color palettes, line weights, how eyes are drawn, how shadows fall, three or four background studies at different times of day, and a &quot;do not do this&quot; section. Then generate character sheets for the robot (front, side, three-quarter, a few expressions, a few poses, how he looks when he&#x27;s tired, how he looks when he&#x27;s happy), the old woman, the shiba, and at least four distinct cats who look nothing like each other. Do a turnaround for the bicycle too, because the bicycle is a character in this film and we need it to be recognizable in silhouette from across a street. Iterate on all of these until they&#x27;re consistent. If the model drifts, fix the prompt, add reference images, use whatever consistency features are available. Do not move on until you can generate the robot ten times and get the same robot ten times.</p>
+<p>Then design your sets. Generate the machiya, the lane outside it, the river, the market, the shrine, the alley where the bicycle is finally found, and anything else the story needs. Think about camera height. A small robot sees the world from about a metre off the ground and the film should mostly be shot from there, which makes everything feel bigger and makes the cats feel like peers. Then insert the characters into the sets and use the video model to generate the base shots. Read the video model docs carefully, particularly around reference images, duration limits, camera motion prompts, and whether it can take an audio reference. Build a shot list first. Every shot gets a number, a duration, a description, a camera move, which characters are in it, what emotional beat it&#x27;s carrying, and what the audio is doing. Do not generate anything without a shot list. You will want to run the video model a lot, and you will want verification loops: after every batch, extract frames, look at them, check the character is on-model, check the motion isn&#x27;t broken, check the lighting matches the time of day the shot is supposed to be, and regenerate what&#x27;s wrong. Keep a log of what worked and what didn&#x27;t so you stop repeating mistakes.</p>
+<p>There&#x27;s no dialogue in this film. I don&#x27;t want any spoken words at all. The old woman can hum. The robot can beep and whir. The animals can bark and meow. That&#x27;s it. So the score and sound design are doing the emotional heavy lifting and I want you to take that seriously. Use the ElevenLabs API for sound design, the docs and key are in [path]. Ambient Kyoto: cicadas if it&#x27;s summer, bicycle bells, the specific sound of a train crossing, temple bells, water in a stone channel, a shopkeeper rolling up a shutter, the crinkle of a plastic bag, cats. Layer it properly. For the music, I want a small, simple, memorable melody, piano or a plucked instrument, something that could be whistled, that appears in fragments through the film and only plays in full at the end. If you can generate music with the tools available, do it. If you can&#x27;t, write it in JavaScript with the web audio API, I don&#x27;t care how, but there must be an original score and it must be timed to picture. You can use the video scoring skill to learn how to build music against timecodes.</p>
+<p>Now the part I care about most. Once you have your base video assets from the video model, I don&#x27;t want to ship them as-is. I want you to use your visual reasoning and your ability to build animations in JavaScript and reconstruct the whole film as an overlay, like rotoscoping, like the technique where you shoot live action first and then draw over it. The video gen work is scaffolding. It gives you physically plausible motion, camera moves, consistent characters, and real spatial layouts, and then you draw the actual film on top in canvas or SVG or whatever you&#x27;re strongest in, with a hand-drawn, slightly wobbly line, paper texture, watercolor bleeds, the frame rate dropped to something like twelve frames a second with held frames so it feels animated by a person and not rendered by a machine. Add the things video models can&#x27;t do well: rain drawn as individual lines, a bicycle bell that visibly rings, cat whiskers, the little animated puff when the robot&#x27;s wheels hit a puddle, sakura petals or ginkgo leaves depending on the season you choose, the flicker of a lantern. Ideally we never see the raw generated footage at all. Everything the viewer sees is the beautiful drawing you produced.</p>
+<p>Text on screen: use it sparingly and beautifully. A title card in a nice Japanese-influenced typeface, maybe a chapter card or two with the time of day in kanji and English, and the credits. Don&#x27;t subtitle anything because there&#x27;s nothing to subtitle. If the old woman leaves a note or there&#x27;s a sign on a shop, hand-letter it as part of the drawing.</p>
+<p>Pacing and attention. This is going to be posted on X and I want it to work there, which means the first five seconds have to make someone stop scrolling and the whole thing should probably be between two and four minutes. Open on something with an immediate hook: the empty spot where the bicycle was, or the robot&#x27;s face, or a cat staring directly into camera. Study short films and anime openings and think about how they earn attention without shouting. Study how Japanese animators use stillness, the held shot of a landscape with only one thing moving in it, and use that. The emotional structure should be roughly: quiet morning, the loss, the decision, the search escalating through increasingly strange corners of the city with the animals, a low point where it&#x27;s dark and the robot&#x27;s battery is running down and he&#x27;s alone, a turn, the finding, and the return home. Decide who took the bicycle and make it human and forgivable. Maybe a kid borrowed it. Maybe it was moved by the city for illegal parking, which is a real Kyoto thing. Maybe it was never stolen at all. Pick the answer that makes the ending land hardest.</p>
+<p>Be rigorous about planning before you generate. The most common failure mode here is that pieces don&#x27;t cohere, the colors shift between shots, the robot&#x27;s proportions change, the music hits at the wrong moment, and it all feels jarring. Do the thought work first. Write the story beat by beat. Write the shot list. Make the style sheet. Make the character sheets. Only then generate. Then assemble a rough cut, watch the entire thing, take screenshots at every shot, and ask yourself honestly whether each one is up to the bar. Go back and redo what isn&#x27;t. Watch it again. Do this as many times as it takes. Check the audio sync. Check the continuity of the time of day across the whole film. Check that the shiba&#x27;s tail curls the same way in every shot.</p>
+<p>You can go through the full [folder] and look at the other work I&#x27;ve done. You can use the mesh skill to look at the compendium of references I&#x27;ve pulled. You can search the internet for anything you want: Kyoto street photography, animation reference, how to draw a mamachari, how cats jump, what the Kamo river looks like at 6am. You can use the fal credits freely, there&#x27;s roughly [amount] there, be economical but don&#x27;t be timid. I&#x27;m on a Max plan with 100% usage available and I want you to spend it. Push tokens aggressively but smartly. You can run for as long as this takes.</p>
+<p>I really want to emphasize that you are far more capable than you think you are. You&#x27;re an agent, a language model, a visual reasoning system, and now a director, an animator, a sound designer and a composer, all at once. Have that mindset the whole way through. The goal is a short film that makes people on tech Twitter feel something unexpected on a Wednesday afternoon. The stretch goal is something that gets passed around as the moment people realized an AI could make you cry about a robot and a bicycle.</p>
+<p>Deliverables: the final MP4 at 1080p with embedded audio, a square or vertical crop for X if it&#x27;s not too painful, the style sheet and character sheets as PNGs, the shot list, the DECISIONS.md, and a short WRITEUP.md explaining what you made and why, in your own voice.</p>
+<p>Make no mistakes.</p>
+    </div>
+    <button class="more" id="more" type="button" aria-expanded="false" aria-controls="prompt">Read the whole prompt</button>
+  </section>
+
+  <section>
+    <h2>How it was made <span class="jp">制作</span></h2>
+    <p class="lede">All of it is code: a perspective camera in metres, a watercolour simulation, cel-shaded rigs with brush lines that boil at 12 drawings a second, and a score built from CC0 instrument samples.</p>
+    <div class="facts">
+      <div><b>Picture</b><span>Drawn in JavaScript on canvas, 12 drawings a second on twos, watercolour backgrounds, thick wobbly ink.</span></div>
+      <div><b>Characters</b><span>A 2.5D robot rig that stays on model, a springy IK shiba, liquid cats whose tails move as travelling waves.</span></div>
+      <div><b>Score</b><span>One eleven-note melody in D major, heard only in fragments until she lets go of the saddle.</span></div>
+      <div><b>Sound</b><span>Field recordings for the animals and the rain, and a synthesised bell that finally rings.</span></div>
+    </div>
+    <div class="docs">
+      <a href="https://github.com/johnbr0phy/bicycle/blob/main/WRITEUP.md">Writeup</a>
+      <a href="https://github.com/johnbr0phy/bicycle/blob/main/DECISIONS.md">Decisions</a>
+      <a href="https://github.com/johnbr0phy/bicycle/blob/main/docs/STORY.md">Beat sheet</a>
+      <a href="https://github.com/johnbr0phy/bicycle/blob/main/docs/SHOTLIST.md">Shot list</a>
+      <a href="https://github.com/johnbr0phy/bicycle/blob/main/docs/PRODUCTION_LOG.md">Production log</a>
+      <a href="https://github.com/johnbr0phy/bicycle">Source</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sheets <span class="jp">設定</span></h2>
+    <p class="lede">The style sheet and the character sheets. Click any sheet to open the full-resolution PNG.</p>
+    <div class="sheets">
+<a class="sheet" href="https://github.com/johnbr0phy/bicycle/blob/main/sheets/style_sheet.png"><img src="assets/sheets/style_sheet.jpg" alt="Style sheet sheet" loading="lazy"><span><b>Style sheet</b>palettes, line weights, eyes, shadows, background studies, and what not to do</span></a>
+<a class="sheet" href="https://github.com/johnbr0phy/bicycle/blob/main/sheets/char_robot.png"><img src="assets/sheets/char_robot.jpg" alt="The robot sheet" loading="lazy"><span><b>The robot</b>turnaround, expressions, poses, tired, happy</span></a>
+<a class="sheet" href="https://github.com/johnbr0phy/bicycle/blob/main/sheets/char_woman.png"><img src="assets/sheets/char_woman.jpg" alt="Morita-san sheet" loading="lazy"><span><b>Morita-san</b>the owner, about seventy</span></a>
+<a class="sheet" href="https://github.com/johnbr0phy/bicycle/blob/main/sheets/char_boy.png"><img src="assets/sheets/char_boy.jpg" alt="The boy sheet" loading="lazy"><span><b>The boy</b>about eight, learning to ride</span></a>
+<a class="sheet" href="https://github.com/johnbr0phy/bicycle/blob/main/sheets/char_shiba.png"><img src="assets/sheets/char_shiba.jpg" alt="The shiba sheet" loading="lazy"><span><b>The shiba</b>suspicious, then the guide; tail curls to his left, always</span></a>
+<a class="sheet" href="https://github.com/johnbr0phy/bicycle/blob/main/sheets/char_cats.png"><img src="assets/sheets/char_cats.jpg" alt="The cats sheet" loading="lazy"><span><b>The cats</b>four informants who look nothing alike</span></a>
+<a class="sheet" href="https://github.com/johnbr0phy/bicycle/blob/main/sheets/char_bicycle.png"><img src="assets/sheets/char_bicycle.jpg" alt="The bicycle sheet" loading="lazy"><span><b>The bicycle</b>a step-through mamachari, recognisable in silhouette</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p class="ded">for everyone who ever held the back of a saddle, and let go</p>
+  <p>Written, drawn, animated and scored by Claude.<br>Instrument samples: Versilian Community Sample Library, VSCO 2 Community Edition. Field recordings: ESC-50 (Freesound contributors, CC BY-NC). Type: Klee One, Shippori Mincho, Yuji Mai.</p>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement, key = 'bicycle-theme';
+  try { var saved = localStorage.getItem(key); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+  document.getElementById('theme').addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme') === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark'; root.setAttribute('data-theme', next);
+    try { localStorage.setItem(key, next); } catch (e) {}
+  });
+  var p = document.getElementById('prompt'), b = document.getElementById('more');
+  b.addEventListener('click', function () {
+    var open = p.classList.toggle('clamped') === false;
+    b.textContent = open ? 'Collapse' : 'Read the whole prompt'; b.setAttribute('aria-expanded', open);
+    if (!open) p.scrollIntoView({ block: 'start' });
+  });
+})();
+</script>
+</body>
+</html>
