@@ -1,5 +1,5 @@
 'use strict';
-// S08 — The wall of cats. Low and wide along a temple wall. Five cats on the tiled cap, each a different shape.
+// S08: The wall of cats. Low and wide along a temple wall. Five cats on the tiled cap, each a different shape.
 // The robot rolls in below, tilts his face up and shows the bicycle glyph. The cats look down. One yawns.
 const L = require('./lib'); const { C, R, K } = L; const TW = require('../sets/templewall'); const { cached } = require('../engine/cache');
 const CATS = [['elder', 10.6, 'loaf', 0.4], ['extra1', 9.2, 'lie', 1.3], ['bobtail', 7.9, 'sit', 2.1], ['kuro', 7.0, 'loaf', 0.7], ['boss', 5.6, 'sit', 1.6]];

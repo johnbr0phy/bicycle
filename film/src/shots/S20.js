@@ -1,5 +1,5 @@
 'use strict';
-// S20 — The alley. A dead-end behind a shuttered shop, one bare bulb. The bicycle lies against the wall, basket bent,
+// S20: The alley. A dead-end behind a shuttered shop, one bare bulb. The bicycle lies against the wall, basket bent,
 // and on the step beside it a boy of about eight sits with his knees hugged, face down, one knee scraped. The robot
 // stops. Hold. He looks at the bicycle. Then at the boy. The boy looks up and sees a robot and a dog.
 const L = require('./lib'); const { C, FX, R, S, Hm, B } = L; const Al = require('../sets/alley'); const { cached } = require('../engine/cache');

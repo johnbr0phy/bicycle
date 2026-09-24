@@ -1,5 +1,5 @@
 'use strict';
-// S22 — Walking it home. Lateral tracking shot, right to left (the journey reversed). The boy pushes the bicycle;
+// S22: Walking it home. Lateral tracking shot, right to left (the journey reversed). The boy pushes the bicycle;
 // the robot rolls beside him at one bar; the shiba trots ahead. Lanterns, wet stone, a persimmon tree over a wall,
 // the cream elder cat in silhouette on the wall. The rear wheel squeaks once per turn.
 const L = require('./lib'); const { C, R, S, K, Hm, B } = L; const SS = require('../sets/streetside'); const PAL = require('../sets/palettes'); const { cached } = require('../engine/cache'); const Kit = require('../sets/kit'); const P = require('../props');

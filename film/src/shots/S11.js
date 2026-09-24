@@ -1,5 +1,5 @@
 'use strict';
-// S11 — The shiba remembers. Closer on the pair. The robot shows the bicycle glyph; the shiba tilts its head.
+// S11: The shiba remembers. Closer on the pair. The robot shows the bicycle glyph; the shiba tilts its head.
 // A picture-book memory blooms above it: the green bicycle leaving at dawn, pushed by a small figure.
 // The dog barks once, spins, and springs away up the path. The robot follows.
 const L = require('./lib'); const { C, R, S } = L; const Cn = require('../sets/canal'); const { cached } = require('../engine/cache'); const M = require('../memory'); const S10 = require('./S10'); const { Cam } = require('../engine/persp');

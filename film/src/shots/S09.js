@@ -1,5 +1,5 @@
 'use strict';
-// S09 — East. Looking up past the robot's head at the grey tabby on the wall. It studies the glyph, then slowly
+// S09: East. Looking up past the robot's head at the grey tabby on the wall. It studies the glyph, then slowly
 // turns its head to screen right and holds. The robot follows its gaze. The cat closes its eyes.
 const L = require('./lib'); const { C, R, K } = L; const TW = require('../sets/templewall'); const { cached } = require('../engine/cache');
 module.exports = {

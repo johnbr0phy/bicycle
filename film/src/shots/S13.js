@@ -1,5 +1,5 @@
 'use strict';
-// S13 — The cap. Close and low by a fish crate. The white bobtail sits on something yellow: a child's school hat.
+// S13: The cap. Close and low by a fish crate. The white bobtail sits on something yellow: a child's school hat.
 // The robot notices; the cat will not move. The shiba barks; the cat hisses and hops off. The robot lifts the hat
 // and turns it over: a name written inside in a child's hand.
 const L = require('./lib'); const { C, FX, R, S, K } = L; const M = require('../sets/market'); const { cached } = require('../engine/cache'); const P = require('../props'); const { Cam } = require('../engine/persp');

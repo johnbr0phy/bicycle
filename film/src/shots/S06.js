@@ -1,5 +1,5 @@
 'use strict';
-// S06 — The decision. The wide lane from S02. He looks at the closed door, then at the spot. His screen shows a
+// S06: The decision. The wide lane from S02. He looks at the closed door, then at the spot. His screen shows a
 // bicycle. He straightens his bent antenna, turns, and rolls away up the lane toward the light.
 const L = require('./lib'); const { C, R } = L; const P = require('../props');
 module.exports = {

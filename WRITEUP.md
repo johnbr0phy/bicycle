@@ -1,4 +1,4 @@
-# The Bicycle — writeup
+# The Bicycle: writeup
 
 *A 3 minute 42 second animated short. No dialogue. Made end to end by Claude in one session.*
 
@@ -34,9 +34,9 @@ The brief assumed a fal.ai key for image and video generation and an ElevenLabs 
 
 ## Files
 
-- `deliverables/the_bicycle_1080p.mp4` — the film, 1920×1080, 24 fps, stereo AAC
-- `deliverables/the_bicycle_vertical_4x5.mp4` — the 1080×1350 cut for X
-- `sheets/` — the style sheet and the character sheets (robot, woman, boy, shiba, cats, bicycle)
-- `docs/STORY.md`, `docs/SHOTLIST.md` — the beat sheet and the 28-shot list
-- `DECISIONS.md` — every assumption, in order; `docs/PRODUCTION_LOG.md` — what broke and how it was fixed
-- `film/` — all source: `render.js` renders a shot, `assemble.py` builds the film, `audio/film/mixdown.py` builds the soundtrack
+- `deliverables/the_bicycle_1080p.mp4`: the film, 1920×1080, 24 fps, stereo AAC
+- `deliverables/the_bicycle_vertical_4x5.mp4`: the 1080×1350 cut for X
+- `sheets/`: the style sheet and the character sheets (robot, woman, boy, shiba, cats, bicycle)
+- `docs/STORY.md`, `docs/SHOTLIST.md`: the beat sheet and the 28-shot list
+- `DECISIONS.md`: every assumption, in order; `docs/PRODUCTION_LOG.md`: what broke and how it was fixed
+- `film/`: all source: `render.js` renders a shot, `assemble.py` builds the film, `audio/film/mixdown.py` builds the soundtrack

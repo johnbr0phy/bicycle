@@ -1,5 +1,5 @@
 'use strict';
-// S18 — The low point. Night. Close on the robot under the awning, the vending machine the only warm light.
+// S18: The low point. Night. Close on the robot under the awning, the vending machine the only warm light.
 // His bicycle glyph flickers and goes out. Hold: only the rain moves. Then the soaked shiba trots in, drops a small
 // object at his wheel and stands panting. His eyes come back on. He picks it up: a bicycle bell. He presses the
 // lever. Clack.

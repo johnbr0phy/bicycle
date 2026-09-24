@@ -1,4 +1,4 @@
-# DECISIONS.md — The Bicycle
+# DECISIONS.md, The Bicycle
 
 A running log of every assumption and creative decision, in the order I made them.
 Nobody was available to answer questions, so each one is a commitment, not a proposal.

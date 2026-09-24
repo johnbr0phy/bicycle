@@ -1,5 +1,5 @@
 'use strict';
-// S16 — Lanterns. Dusk. Pontocho. The lanterns come on one by one as the robot rolls through; light rain begins,
+// S16: Lanterns. Dusk. Pontocho. The lanterns come on one by one as the robot rolls through; light rain begins,
 // drawn as single lines. His wheel hits a puddle: a little puff of drops. The shiba is ahead, then further ahead.
 const L = require('./lib'); const { C, R, S } = L; const Pt = require('../sets/pontocho'); const { cached } = require('../engine/cache'); const P = require('../props'); const T = require('../title');
 module.exports = {

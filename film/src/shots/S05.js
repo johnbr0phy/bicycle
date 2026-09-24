@@ -1,5 +1,5 @@
 'use strict';
-// S05 — She looks at it. From the robot's height near the spot, the open doorway. She comes out humming with the
+// S05: She looks at it. From the robot's height near the spot, the open doorway. She comes out humming with the
 // kettle, sees the empty stone, stops humming mid-phrase, looks for three full seconds, turns and goes in.
 // The door slides shut on the robot, whose head is a silhouette at frame left.
 const L = require('./lib'); const { C, R, Hm, FX } = L; const K = require('../sets/kit');

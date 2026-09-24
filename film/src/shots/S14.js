@@ -1,5 +1,5 @@
 'use strict';
-// S14 — Kamo river. Very wide, long hold. Afternoon gold, people evenly spaced on the far bank, a heron in the
+// S14: Kamo river. Very wide, long hold. Afternoon gold, people evenly spaced on the far bank, a heron in the
 // shallows, a black kite circling. The robot and the shiba are small figures on the near path. He slows.
 const L = require('./lib'); const { C, R, S } = L; const Rv = require('../sets/river'); const { cached } = require('../engine/cache'); const Bd = require('../chars/birds');
 module.exports = {

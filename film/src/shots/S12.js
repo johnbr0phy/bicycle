@@ -1,5 +1,5 @@
 'use strict';
-// S12 — Nishiki. Noon. A forest of shoppers' legs at the robot's height. He threads through; the shiba weaves ahead.
+// S12: Nishiki. Noon. A forest of shoppers' legs at the robot's height. He threads through; the shiba weaves ahead.
 // The black cat, who led them here, eats a dropped fish tail by the fish stall, satisfied and useless.
 const L = require('./lib'); const { C, R, S, K } = L; const M = require('../sets/market'); const { cached } = require('../engine/cache'); const CR = require('./crowd'); const T = require('../title');
 module.exports = {

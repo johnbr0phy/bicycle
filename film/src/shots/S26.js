@@ -1,5 +1,5 @@
 'use strict';
-// S26 — Zero. Close on the robot by her step. His chest: no bars. His eyes dim as he watches the boy ride back up the
+// S26: Zero. Close on the robot by her step. His chest: no bars. His eyes dim as he watches the boy ride back up the
 // lane toward him. The screen goes dark. Her hand lays a folded cloth over his dented shoulder. The boy stops beside
 // them and tries the bell: clack. Clack. Then it rings, clean and bright. For one beat his screen answers.
 const L = require('./lib'); const { C, R, S, Hm, B } = L; const HM = require('./home');

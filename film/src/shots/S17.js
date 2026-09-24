@@ -1,5 +1,5 @@
 'use strict';
-// S17 — One bar. Dusk rain by the canal. The robot rolls in and stops under a closed shop's awning, beside a
+// S17: One bar. Dusk rain by the canal. The robot rolls in and stops under a closed shop's awning, beside a
 // vending machine. His chest: one bar, blinking. He sets the hat down on the bench beside him. His eyes dim.
 const L = require('./lib'); const { C, R } = L; const Sf = require('../sets/shopfront'); const { cached } = require('../engine/cache'); const P = require('../props');
 module.exports = {

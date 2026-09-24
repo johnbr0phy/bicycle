@@ -1,5 +1,5 @@
 'use strict';
-// S19 — The turn. Rain has stopped. Wet stone reflects the lanterns. The shiba springs ahead through a small vermilion
+// S19: The turn. Rain has stopped. Wet stone reflects the lanterns. The shiba springs ahead through a small vermilion
 // gate; the robot follows with the bell. Along the fences the cats turn their heads one by one as the pair passes.
 const L = require('./lib'); const { C, R, S, K } = L; const Lane = require('../sets/lane'); const { cached } = require('../engine/cache'); const P = require('../props');
 module.exports = {

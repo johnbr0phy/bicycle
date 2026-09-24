@@ -1,5 +1,5 @@
 'use strict';
-// S02 — The empty spot. Locked wide at robot height. Only the noren moves. Title card.
+// S02: The empty spot. Locked wide at robot height. Only the noren moves. Title card.
 const C = require('../engine/core'); const Lane = require('../sets/lane'); const { cached } = require('../engine/cache'); const P = require('../props'); const T = require('../title');
 module.exports = {
   smooth: false,

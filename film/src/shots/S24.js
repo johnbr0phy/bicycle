@@ -1,5 +1,5 @@
 'use strict';
-// S24 — She runs. She holds the saddle from behind and runs, an old woman running, down the lane under the lanterns.
+// S24: She runs. She holds the saddle from behind and runs, an old woman running, down the lane under the lanterns.
 // She lets go. He wobbles and keeps going. The robot watches from the step, the shiba beside him.
 const L = require('./lib'); const { C, R, S, Hm, B } = L; const HM = require('./home');
 function bikeZ(t) { if (t < 1.2) return 4.7; const u = Math.min(t, 5) - 1.2; let z = 4.7 - 0.4 * u * u; if (t > 5) z -= 3.04 * (t - 5); return z; }

@@ -1,5 +1,5 @@
 'use strict';
-// S23 — The doorstep. The lane at night. She sits on her doorstep with a small lantern, waiting. She sees them and
+// S23: The doorstep. The lane at night. She sits on her doorstep with a small lantern, waiting. She sees them and
 // stands. The boy stops, takes off his hat, and bows deeply. Long hold. She walks to the bicycle and puts her hand on
 // the saddle, looking at the boy. The robot hands her the bell.
 const L = require('./lib'); const { C, R, S, Hm, B } = L; const HM = require('./home'); const S18 = require('./S18'); const P = require('../props');

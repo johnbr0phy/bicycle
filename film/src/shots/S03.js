@@ -1,5 +1,5 @@
 'use strict';
-// S03 — The robot wakes. Pre-dawn genkan. Close on his chest: battery bars light one by one, eyes blink on.
+// S03: The robot wakes. Pre-dawn genkan. Close on his chest: battery bars light one by one, eyes blink on.
 // Pull back as he turns and rolls to the lattice door; he slides it open and dawn floods in.
 const L = require('./lib'); const { C, FX, R } = L; const Gk = require('../sets/genkan'); const { cached } = require('../engine/cache');
 module.exports = {

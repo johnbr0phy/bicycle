@@ -1,5 +1,5 @@
 'use strict';
-// S15 — The elder cat. On the first turtle stepping stone, the cream long-haired elder is dozing. The robot shows
+// S15: The elder cat. On the first turtle stepping stone, the cream long-haired elder is dozing. The robot shows
 // the glyph and holds up the hat. The cat looks at it, then looks up-river, then closes its eyes: asleep.
 // The shiba shoves its nose into the hat, snorts, and springs off up the path.
 const L = require('./lib'); const { C, R, S, K } = L; const Rv = require('../sets/river'); const { cached } = require('../engine/cache'); const P = require('../props');

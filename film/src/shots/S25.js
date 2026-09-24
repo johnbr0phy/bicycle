@@ -1,5 +1,5 @@
 'use strict';
-// S25 — The photograph. Match cut to the framed photo in the genkan, in focus now: the same lane in summer sunlight,
+// S25: The photograph. Match cut to the framed photo in the genkan, in focus now: the same lane in summer sunlight,
 // a younger her holding the saddle of the same green bicycle, a small girl on it, mid-wobble. Hold.
 const L = require('./lib'); const { C, FX, Hm } = L; const HM = require('./home'); const { cached } = require('../engine/cache'); const Lane = require('../sets/lane'); const LK = require('../engine/look');
 module.exports = {

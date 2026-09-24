@@ -1,5 +1,5 @@
 'use strict';
-// S21 — The cap goes back. Close. The robot rolls to the boy and raises his gripper: the yellow hat. He places it on
+// S21: The cap goes back. Close. The robot rolls to the boy and raises his gripper: the yellow hat. He places it on
 // the boy's head, slightly crooked. His screen shows the bicycle, then a bicycle with a small figure pushing it and a
 // small robot beside it. The boy wipes his face. The shiba licks the scraped knee.
 const L = require('./lib'); const { C, R, S, Hm } = L; const Al = require('../sets/alley'); const { cached } = require('../engine/cache'); const P = require('../props'); const S20 = require('./S20');

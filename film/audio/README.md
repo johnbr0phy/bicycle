@@ -1,4 +1,4 @@
-# Audio toolkit — "The Bicycle"
+# Audio toolkit, "The Bicycle"
 
 Everything is Python 3.11 + numpy/scipy/soundfile (matplotlib only for PNGs).
 All audio is **48 kHz float32**; mono = shape `(n,)`, stereo = shape `(n, 2)`. WAVs are written
@@ -160,7 +160,7 @@ True-stereo convolution with a synthetic IR set (LL, LR, RL, RR): decorrelated n
 octave bands with frequency-dependent RT60 (`damping` shortens the highs), a density build-up
 (10–60 ms, `size`), 6–22 low-passed early reflections spread over up to ~90 ms (`size`), band
 limited to `lowcut..highcut`, energy-normalised, after `predelay_ms`. `out = (1-wet)*dry + wet*wet_signal`
-(`wet=1` = 100 % wet for send busses). `keep_tail=False` returns the input length — render with
+(`wet=1` = 100 % wet for send busses). `keep_tail=False` returns the input length, render with
 room at the end (or pass `keep_tail=True` to get `len(x)+IR` samples).
 `make_ir(decay_s, predelay_ms, size, damping, lowcut, highcut, sr, seed, er_level) -> (n,4)` is cached.
 Presets (`sampler.PRESETS`): `room` (decay 0.7 s, predelay 6.0 ms, size 0.25, damping 0.6, 120–9000 Hz); `hall` (decay 2.6 s, predelay 24.0 ms, size 0.85, damping 0.45, 90–10000 Hz); `temple` (decay 3.8 s, predelay 35.0 ms, size 1.0, damping 0.55, 70–8000 Hz); `street` (decay 1.1 s, predelay 12.0 ms, size 0.5, damping 0.7, 150–7000 Hz); `plate` (decay 1.8 s, predelay 10.0 ms, size 0.4, damping 0.3, 150–12000 Hz)
@@ -389,36 +389,36 @@ are synthesised. Church bells in ESC-50 are all Western peals/tolls; the temple 
 * `reverb.wav` (dry | room | hall | temple), `ir_hall.png`.
 
 ## Credits / licences
-* **VCSL — Versilian Community Sample Library** (CC0), Versilian Studios / Sam Gossner et al.
+* **VCSL, Versilian Community Sample Library** (CC0), Versilian Studios / Sam Gossner et al.
 * **VSCO 2 Community Edition** (CC0), Versilian Studios / Sam Gossner; Ivy Audio / Simon Dalzell.
 * **ESC-50** (K. J. Piczak, "ESC: Dataset for Environmental Sound Classification", ACM MM 2015),
   clips from Freesound.org, **CC BY-NC 3.0** – fine for this non-commercial film with credit.
   Clips used (Freesound ids):
-- Freesound #50060 — ESC-50 `1-50060-A-10.wav` (rain) — https://freesound.org/s/50060/
-- Freesound #51805 — ESC-50 `1-51805-B-33.wav` (door_wood_creaks) — https://freesound.org/s/51805/
-- Freesound #56380 — ESC-50 `1-56380-A-5.wav` (cat) — https://freesound.org/s/56380/
-- Freesound #87780 — ESC-50 `2-87780-A-33.wav` (door_wood_creaks) — https://freesound.org/s/87780/
-- Freesound #87936 — ESC-50 `3-87936-B-46.wav` (church_bells) — https://freesound.org/s/87936/
-- Freesound #96950 — ESC-50 `1-96950-B-9.wav` (crow) — https://freesound.org/s/96950/
-- Freesound #108761 — ESC-50 `2-108761-A-14.wav` (chirping_birds) — https://freesound.org/s/108761/
-- Freesound #110913 — ESC-50 `3-110913-B-7.wav` (insects) — https://freesound.org/s/110913/
-- Freesound #112557 — ESC-50 `3-112557-A-23.wav` (breathing) — https://freesound.org/s/112557/
-- Freesound #129678 — ESC-50 `3-129678-A-13.wav` (crickets) — https://freesound.org/s/129678/
-- Freesound #155583 — ESC-50 `3-155583-A-14.wav` (chirping_birds) — https://freesound.org/s/155583/
-- Freesound #156907 — ESC-50 `3-156907-A-15.wav` (water_drops) — https://freesound.org/s/156907/
-- Freesound #157695 — ESC-50 `3-157695-A-0.wav` (dog) — https://freesound.org/s/157695/
-- Freesound #161303 — ESC-50 `4-161303-A-5.wav` (cat) — https://freesound.org/s/161303/
-- Freesound #161500 — ESC-50 `3-161500-A-17.wav` (pouring_water) — https://freesound.org/s/161500/
-- Freesound #164206 — ESC-50 `4-164206-A-10.wav` (rain) — https://freesound.org/s/164206/
-- Freesound #173568 — ESC-50 `5-173568-A-33.wav` (door_wood_creaks) — https://freesound.org/s/173568/
-- Freesound #188287 — ESC-50 `4-188287-A-9.wav` (crow) — https://freesound.org/s/188287/
-- Freesound #191687 — ESC-50 `4-191687-A-0.wav` (dog) — https://freesound.org/s/191687/
-- Freesound #198321 — ESC-50 `5-198321-A-10.wav` (rain) — https://freesound.org/s/198321/
-- Freesound #198962 — ESC-50 `4-198962-A-25.wav` (footsteps) — https://freesound.org/s/198962/
-- Freesound #215172 — ESC-50 `5-215172-A-13.wav` (crickets) — https://freesound.org/s/215172/
-- Freesound #217158 — ESC-50 `5-217158-A-0.wav` (dog) — https://freesound.org/s/217158/
-- Freesound #234335 — ESC-50 `5-234335-A-23.wav` (breathing) — https://freesound.org/s/234335/
-- Freesound #262579 — ESC-50 `2-262579-A-45.wav` (train) — https://freesound.org/s/262579/
+- Freesound #50060, ESC-50 `1-50060-A-10.wav` (rain), https://freesound.org/s/50060/
+- Freesound #51805, ESC-50 `1-51805-B-33.wav` (door_wood_creaks), https://freesound.org/s/51805/
+- Freesound #56380, ESC-50 `1-56380-A-5.wav` (cat), https://freesound.org/s/56380/
+- Freesound #87780, ESC-50 `2-87780-A-33.wav` (door_wood_creaks), https://freesound.org/s/87780/
+- Freesound #87936, ESC-50 `3-87936-B-46.wav` (church_bells), https://freesound.org/s/87936/
+- Freesound #96950, ESC-50 `1-96950-B-9.wav` (crow), https://freesound.org/s/96950/
+- Freesound #108761, ESC-50 `2-108761-A-14.wav` (chirping_birds), https://freesound.org/s/108761/
+- Freesound #110913, ESC-50 `3-110913-B-7.wav` (insects), https://freesound.org/s/110913/
+- Freesound #112557, ESC-50 `3-112557-A-23.wav` (breathing), https://freesound.org/s/112557/
+- Freesound #129678, ESC-50 `3-129678-A-13.wav` (crickets), https://freesound.org/s/129678/
+- Freesound #155583, ESC-50 `3-155583-A-14.wav` (chirping_birds), https://freesound.org/s/155583/
+- Freesound #156907, ESC-50 `3-156907-A-15.wav` (water_drops), https://freesound.org/s/156907/
+- Freesound #157695, ESC-50 `3-157695-A-0.wav` (dog), https://freesound.org/s/157695/
+- Freesound #161303, ESC-50 `4-161303-A-5.wav` (cat), https://freesound.org/s/161303/
+- Freesound #161500, ESC-50 `3-161500-A-17.wav` (pouring_water), https://freesound.org/s/161500/
+- Freesound #164206, ESC-50 `4-164206-A-10.wav` (rain), https://freesound.org/s/164206/
+- Freesound #173568, ESC-50 `5-173568-A-33.wav` (door_wood_creaks), https://freesound.org/s/173568/
+- Freesound #188287, ESC-50 `4-188287-A-9.wav` (crow), https://freesound.org/s/188287/
+- Freesound #191687, ESC-50 `4-191687-A-0.wav` (dog), https://freesound.org/s/191687/
+- Freesound #198321, ESC-50 `5-198321-A-10.wav` (rain), https://freesound.org/s/198321/
+- Freesound #198962, ESC-50 `4-198962-A-25.wav` (footsteps), https://freesound.org/s/198962/
+- Freesound #215172, ESC-50 `5-215172-A-13.wav` (crickets), https://freesound.org/s/215172/
+- Freesound #217158, ESC-50 `5-217158-A-0.wav` (dog), https://freesound.org/s/217158/
+- Freesound #234335, ESC-50 `5-234335-A-23.wav` (breathing), https://freesound.org/s/234335/
+- Freesound #262579, ESC-50 `2-262579-A-45.wav` (train), https://freesound.org/s/262579/
 * All other sounds are synthesised in `sfx.py` (no third-party material).
 
 ## Known gaps / notes

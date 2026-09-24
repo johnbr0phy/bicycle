@@ -1,5 +1,5 @@
 'use strict';
-// S10 — Standoff at the canal. The robot rolls along the canal path; the shiba has followed him, leash trailing.
+// S10: Standoff at the canal. The robot rolls along the canal path; the shiba has followed him, leash trailing.
 // The robot stops and turns; the shiba freezes stiff-legged, ears back, tail tight, growls, backs one step.
 const L = require('./lib'); const { C, R, S } = L; const Cn = require('../sets/canal'); const { cached } = require('../engine/cache');
 function leash(ctx, a, groundY, t, len = 160) { if (!a) return; const pts = [a, [a[0] + len * 0.4, a[1] + 60 + 8 * Math.sin(t * 5)], [a[0] + len, groundY]]; C.ink(ctx, C.qbez(pts[0], pts[1], pts[2], 14), { width: 3, color: '#3f6fb2', taper: 0, wobble: 0.5 }); }

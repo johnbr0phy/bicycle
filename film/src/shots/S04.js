@@ -1,5 +1,5 @@
 'use strict';
-// S04 — He sees it. Reverse angle down the lane: the empty spot in the foreground, the open door behind.
+// S04: He sees it. Reverse angle down the lane: the empty spot in the foreground, the open door behind.
 // He rolls out, notices the pale rectangle, a question mark, rolls up to it, looks left, looks right.
 const L = require('./lib'); const { C, R } = L;
 module.exports = {

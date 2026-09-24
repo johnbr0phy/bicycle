@@ -1,5 +1,5 @@
 'use strict';
-// S07 — Past the shiba. Low tracking shot alongside the robot. Doorstep pots, a stone channel, lattice.
+// S07: Past the shiba. Low tracking shot alongside the robot. Doorstep pots, a stone channel, lattice.
 // A red shiba lies tied outside a shop; its head lifts and its eyes follow him. He does not notice.
 const L = require('./lib'); const { C, R, S } = L; const SS = require('../sets/streetside'); const PAL = require('../sets/palettes'); const { cached } = require('../engine/cache'); const P = require('../props'); const K = require('../sets/kit');
 const FAC = [

@@ -1,4 +1,4 @@
-# The Bicycle — beat sheet
+# The Bicycle, beat sheet
 
 Logline: A small, dented household robot spends one day searching the back streets of Kyoto for his
 elderly owner's missing bicycle, helped by a suspicious shiba and a useless network of street cats.

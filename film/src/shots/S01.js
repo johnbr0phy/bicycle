@@ -1,5 +1,5 @@
 'use strict';
-// S01 — The hook. The grey tabby with the torn ear stares straight into the lens at dawn. Only the pupils narrow
+// S01: The hook. The grey tabby with the torn ear stares straight into the lens at dawn. Only the pupils narrow
 // and an ear twitches. At the end it blinks once and looks off frame right.
 const L = require('./lib'); const { C, FX } = L; const CF = require('../chars/catface'); const { cached } = require('../engine/cache'); const Lane = require('../sets/lane');
 module.exports = {

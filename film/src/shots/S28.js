@@ -1,5 +1,5 @@
 'use strict';
-// S28 — Credits on paper. Hand-lettered, with small ink drawings of the cast in the margins.
+// S28: Credits on paper. Hand-lettered, with small ink drawings of the cast in the margins.
 const L = require('./lib'); const { C, R, S, K, B } = L; const T = require('../title');
 const LINES = [
   [0.4, '自転車', { size: 120, font: 'YujiMai', color: '#2c2230' }, 250],

@@ -1,5 +1,5 @@
 'use strict';
-// S27 — Morning again. The same framing as S02. Dawn. The spot is not empty: the bicycle stands in it, the robot
+// S27: Morning again. The same framing as S02. Dawn. The spot is not empty: the bicycle stands in it, the robot
 // charges beside it (a cable runs in through the lattice, one bar and rising), the shiba sleeps against his wheel,
 // and the grey tabby is curled on the saddle. The noren moves. Fade to paper.
 const L = require('./lib'); const { C, R, S, K, B } = L; const P = require('../props');
