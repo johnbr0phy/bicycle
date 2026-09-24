@@ -22,10 +22,10 @@ module.exports = {
     return { photo };
   },
   frame(ctx, t, s, env) {
-    const { W, H } = env; const z = L.kf(t, [[0, 1.0], [6, 1.08]], (x) => x);
+    const { W, H } = env; const u = L.ease.inOut(L.clamp(t / 6, 0, 1)); const z = L.lerp(1.0, 1.6, u); const fxc = L.lerp(W / 2, 990, u), fyc = L.lerp(H / 2, 600, u);
     // the frame on the genkan pillar: dark wood, a white mat, the print, glass reflection. Slow push in.
     ctx.fillStyle = '#2a2026'; ctx.fillRect(0, 0, W, H);
-    ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(z, z); ctx.translate(-W / 2, -H / 2);
+    ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(z, z); ctx.translate(-fxc, -fyc);
     const fw = W * 0.86, fh = H * 0.86, fx = (W - fw) / 2, fy = (H - fh) / 2;
     C.cel(ctx, [[fx - 40, fy - 40], [fx + fw + 40, fy - 40], [fx + fw + 40, fy + fh + 40], [fx - 40, fy + fh + 40]], '#4a3228');
     C.ink(ctx, [[fx - 40, fy - 40], [fx + fw + 40, fy - 40], [fx + fw + 40, fy + fh + 40], [fx - 40, fy + fh + 40]], { closed: true, width: 4, color: '#1e1418', taper: 0 });

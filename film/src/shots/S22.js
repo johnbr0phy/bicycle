@@ -33,7 +33,7 @@ module.exports = {
     const light = { ambient: '#4a4f88', ambientAmt: 0.42, rim: '#ffcf80', rimDir: [0, -3], rimAlpha: 0.85 };
     const walkZ = cz + 0.2; const speed = 12 / 10;
     // shiba ahead (screen left)
-    const sp = L.at(cam, 2.75, walkZ + 2.3); L.drawChar(ctx, W, H, (c, st) => S.draw(c, { gait: 'trot', phase: dt * 2.2, stride: 0.7, t: dt, mouth: 'pant', tail: 1, headYaw: 0.3 }, st), { x: sp.x, y: sp.y, scale: sp.scale, flip: true }, { light });
+    const sp = L.at(cam, 2.2, walkZ + 1.25); L.drawChar(ctx, W, H, (c, st) => S.draw(c, { gait: 'trot', phase: dt * 2.2, stride: 0.7, t: dt, mouth: 'pant', tail: 1, headYaw: 0.3 }, st), { x: sp.x, y: sp.y, scale: sp.scale, flip: true }, { light });
     // the boy pushing the bicycle (bicycle on the far side of him from camera)
     const bp = L.at(cam, 2.85, walkZ + 0.4); const wheelRot = -walkZ / 0.33;
     const bA = L.drawChar(ctx, W, H, (c, st) => B.draw(c, { stand: false, wheel: wheelRot, t: dt, wet: 0.4 }, st), { x: bp.x, y: bp.y, scale: bp.scale, flip: true }, { light, contact: { rx: 300, ry: 25, alpha: 0.4 } });
