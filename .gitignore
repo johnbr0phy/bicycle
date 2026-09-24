@@ -6,3 +6,4 @@ film/audio/demo/
 film/audio/cache/
 film/audio/__pycache__/
 __pycache__/
+*.bundle
