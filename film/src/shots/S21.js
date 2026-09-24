@@ -14,16 +14,16 @@ module.exports = {
     const kp = L.at(cam, -0.62, 3.5, 0.22);
     const bpose = { who: 'boy', yaw: 0.55, seat: [0, -96], feet: { L: [62, 0], R: [44, 0] }, knee: 1, cap: placed, hands: wipe > 0 ? { L: [70, -150], R: [L.lerp(84, 30, wipe), L.lerp(-140, -300, wipe)] } : { L: [70, -150], R: [84, -140] }, headNod: L.lerp(10, -4, lookUp) + (placed ? 2 : 0), headTilt: placed ? -0.08 : 0, bend: 0.25, face: { eyes: wipe > 0.5 ? 'closed' : 'open', mouth: dt > 6.2 ? 'smile' : 'wobble', tears: dt > 6.0 ? 0.2 : 0.9, brows: dt > 6.2 ? 0 : 0.8, look: [0.6, 0] }, t: dt };
     const ka = L.drawChar(ctx, W, H, (c, st) => Hm.draw(c, bpose, st), { x: kp.x, y: kp.y, scale: kp.scale }, { light, contact: { rx: 120, ry: 18, alpha: 0.4 } });
-    // the shiba licks the knee
-    const lick = dt > 4.2 && dt < 6.5; const sp = L.at(cam, -0.25, 3.05);
-    L.drawChar(ctx, W, H, (c, st) => S.draw(c, { t: dt, wet: 0.4, headYaw: 0.2, headLift: lick ? 0.5 : 0, mouth: lick && (env.drawIdx % 4 < 2) ? 'pant' : 'closed', tongue: lick ? 1.4 : 0, eyes: lick ? 'happy' : 'open', tail: 1, wag: 1, crouch: 0.2 }, st), { x: sp.x, y: sp.y, scale: sp.scale, flip: false }, { light: Object.assign({}, light, { rimDir: [-2, -2] }) });
     // the robot at right, reaching up to put the hat on
-    const rp = L.at(cam, 0.05, 3.25); const reach = L.seg(dt, 0.8, 2.0) * (1 - L.seg(dt, 2.6, 3.2));
+    const rp = L.at(cam, 0.05, 3.25); const reach = (0.4 + 0.6 * L.seg(dt, 0.8, 2.0)) * (1 - L.seg(dt, 2.6, 3.2));
     const glyph = dt < 3.4 ? 'eyes' : dt < 4.4 ? 'bike' : dt < 7.6 ? 'bikeKid' : 'happy';
     const pose = { yaw: -1.15, t: dt, battery: 1, batteryBlink: true, wet: 0.3, headNod: -6, armL: [0.15, 0.3, 0.3], armR: [0.2 + 2.3 * reach, 0.6 + 0.3 * reach, placed ? 0.9 : 0.4], antenna: L.kf(dt, [[7.6, 0], [7.75, -0.3], [7.9, 0.15], [8.0, 0]]), screen: { mode: glyph, lookX: -0.5 } };
     const ra = L.drawChar(ctx, W, H, (c, st) => R.draw(c, pose, st), { x: rp.x, y: rp.y, scale: rp.scale }, { light, contact: { rx: 120, ry: 20, alpha: 0.5 }, emissive: (c, st) => R.drawEmissive(c, pose, st) });
-    L.screenGlow(ctx, ra, rp.scale, '#9fe8ff', 0.3);
     if (!placed && ra.gripR) P.schoolHat(ctx, ra.gripR[0], ra.gripR[1] - 8, 0.13 * rp.scale * 353, -0.1);
+    // the shiba licks the knee (in front of the robot, facing the boy)
+    const lick = dt > 4.2 && dt < 6.5; const sp = L.at(cam, -0.02, 3.0);
+    L.drawChar(ctx, W, H, (c, st) => S.draw(c, { t: dt, wet: 0.4, headYaw: 0.2, headLift: lick ? 0.5 : 0, mouth: lick && (env.drawIdx % 4 < 2) ? 'pant' : 'closed', tongue: lick ? 1.4 : 0, eyes: lick ? 'happy' : 'open', tail: 1, wag: 1, crouch: 0.2 }, st), { x: sp.x, y: sp.y, scale: sp.scale, flip: true }, { light: Object.assign({}, light, { rimDir: [2, -2] }) });
+    L.screenGlow(ctx, ra, rp.scale, '#9fe8ff', 0.3);
     S20.bulbLight(ctx, s, W, H, t, 0.8);
   },
 };
